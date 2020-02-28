@@ -13,6 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        // requires authentication on home page
         $this->middleware('auth');
     }
 
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // home is referring to the home.blade.php file
         return view('home');
     }
 }
