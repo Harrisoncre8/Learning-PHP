@@ -14,9 +14,9 @@
                 <div class="pr-5"> <strong>23k</strong> Followers </div>
                 <div class="pr-5"> <strong>212</strong> Following </div>
             </div>
-            <div class="pt-4 font-weight-bold">github.com/Harrisoncre8</div>
-            <div>Creating a small CRUD app to learn PHP.</div>
-            <div> <a href="http://">github.com/Harrisoncre8</a> </div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div>{{ $user->profile->description }}</div>
+            <div> <a href="http://">{{ $user->profile->url ?? 'Link is currently not working' }}</a> </div>
         </div>
     </div>
     <div class="row pt-5">
