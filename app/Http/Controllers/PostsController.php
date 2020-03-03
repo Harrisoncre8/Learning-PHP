@@ -12,4 +12,9 @@ class PostsController extends Controller
         // can also be written as 'posts.create'
         return view('posts/create');
     }
+
+    public function store()
+    {
+        dd(request()->all());
+    }
 }
