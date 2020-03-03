@@ -18,8 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 // route for individual image posts
-// @create is the action handled by the PostsController
-Route::get('/p', 'PostsController@create');
+// /p/create will go to the PostsController 
+// and run our @create method
+Route::get('/p/create', 'PostsController@create');
 
 // calling the index method inside the home controller
 // profile route for user profiles
