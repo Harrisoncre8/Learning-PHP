@@ -21,6 +21,8 @@ Auth::routes();
 // /p/create will go to the PostsController 
 // and run our @create method
 Route::get('/p/create', 'PostsController@create');
+Route::post('/p', 'PostsController@store');
+
 
 // calling the index method inside the home controller
 // profile route for user profiles
