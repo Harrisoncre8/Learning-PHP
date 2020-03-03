@@ -12,7 +12,8 @@ class ProfileController extends Controller
         $user = \App\User::findOrFail($user);
 
         // home is referring to the home.blade.php file
-        return view('home', [
+        // we've renamed home to index.blade.php and moved it to profiles
+        return view('profiles/index', [
             'user' => $user
         ]);
     }
