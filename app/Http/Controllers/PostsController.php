@@ -19,7 +19,8 @@ class PostsController extends Controller
         // and give me all the validated data
         $data = request()->validate([
             'caption' => 'required',
-            'image' => 'required',
+            // cannot be blank and must be an image file
+            'image' => ['required', 'image'],
         ]);
         dd(request()->all());
     }
