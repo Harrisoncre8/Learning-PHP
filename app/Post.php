@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     // Telling laravel to allow developer to manually guard post data
-    protected $guaded = [];
+    protected $guarded = [];
 
     public function user()
     {
