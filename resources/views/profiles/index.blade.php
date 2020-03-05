@@ -10,7 +10,7 @@
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline"> 
                 <h1>{{ $user->username }}</h1> 
-                <a href="#">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
             <div class="d-flex">
                 <div class="pr-5"> <strong>153</strong> Posts </div>
@@ -23,18 +23,12 @@
         </div>
     </div>
     <div class="row pt-5">
-        <div class="col-4">
-            <img src="https://cpb-ap-se2.wpmucdn.com/mediafactory.org.au/dist/f/164/files/2014/01/article-2256067-16B964D7000005DC-733_634x409-1fdvpet.jpg" 
-                 class="w-100 h-100"/>
-        </div>
-        <div class="col-4">
-            <img src="https://hylo.de/eye-care/_processed_/c/f/csm_pc-arbeit-trockene-augen_59627154d7.jpg" 
-                 class="w-100 h-100"/>
-        </div>
-        <div class="col-4">
-            <img src="https://img.etimg.com/thumb/msid-50496451,width-643,imgsize-285478,resizemode-4/do-you-sit-in-front-of-the-computer-all-day-tips-to-avoid-computer-vision-syndrome.jpg" 
-                 class="w-100 h-100"/>
-        </div>
+        
+        @foreach($user->posts as $post)
+            <div class="col-4">
+                <img src="/storage/{{ $post->image }}" class="w-100 h-100"/>
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
