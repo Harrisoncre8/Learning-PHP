@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    // adding a contstructor function with auth middleware
+    // so that all our data within the controller will require authorization
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create()
     {
         // creating a new view and putting it in a posts directory
@@ -22,6 +29,10 @@ class PostsController extends Controller
             // cannot be blank and must be an image file
             'image' => ['required', 'image'],
         ]);
+        
+        // fetch authenticated user, go into thier post and create
+        auth()->user()->posts()->create($data);
+
         dd(request()->all());
     }
 }
