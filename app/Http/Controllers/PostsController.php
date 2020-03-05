@@ -29,10 +29,20 @@ class PostsController extends Controller
             // cannot be blank and must be an image file
             'image' => ['required', 'image'],
         ]);
+
+        // handling post request from image uploads and storing them in 'uploads' driver
+        $imagePath = request('image')->store('uploads', 'public');
         
         // fetch authenticated user, go into thier post and create
-        auth()->user()->posts()->create($data);
+        // caption is contained inside data at key of caption
+        // and image is contained in the image path
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
+        ]);
 
-        dd(request()->all());
+        // redirect the uploaded image process to authenticated user profile
+        // fetching specific user by id
+        return redirect('/profile/' . auth()->user()->id);
     }
 }
