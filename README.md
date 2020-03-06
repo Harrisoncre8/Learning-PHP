@@ -30,6 +30,7 @@ Congifure .env file:
 * Composer
 * Node.js
 * Front End
+  * Intervention Image
   * HTML
   * Bootstrap
   * Vue.js
