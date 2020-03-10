@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
@@ -32,7 +33,13 @@ class PostsController extends Controller
 
         // handling post request from image uploads and storing them in 'uploads' driver
         $imagePath = request('image')->store('uploads', 'public');
-        
+
+        // resizing uploaded image. This will take our image and wrap it
+        // in the intervention class and then fit it by 1200px width and height
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        // save image
+        $image->save();
+
         // fetch authenticated user, go into thier post and create
         // caption is contained inside data at key of caption
         // and image is contained in the image path
