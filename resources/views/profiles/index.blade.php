@@ -24,9 +24,12 @@
     </div>
     <div class="row pt-5">
         
+        <!-- each post can be clicked on and will be taken to a new page -->
         @foreach($user->posts as $post)
             <div class="col-4 pb-4">
-                <img src="/storage/{{ $post->image }}" class="w-100 h-100"/>
+                <a href="/p/{{ $post->id }}">
+                    <img src="/storage/{{ $post->image }}" class="w-100 h-100"/>
+                </a>
             </div>
         @endforeach
     </div>
