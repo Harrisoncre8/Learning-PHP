@@ -20,8 +20,8 @@ Auth::routes();
 // route for individual image posts
 // /p/create will go to the PostsController 
 // and run our @create method
-Route::get('/p/create', 'PostsController@show');
-Route::get('/p/{post}', 'PostsController@create');
+Route::get('/p/create', 'PostsController@create');
+Route::get('/p/{post}', 'PostsController@show');
 Route::post('/p', 'PostsController@store');
 
 
