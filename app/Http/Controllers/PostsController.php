@@ -52,4 +52,13 @@ class PostsController extends Controller
         // fetching specific user by id
         return redirect('/profile/' . auth()->user()->id);
     }
+
+    // automatically fetching our post, if post does not exist, will display 404 
+    // on front end
+    public function show(\App\Post$post)
+    {
+        return view('posts/show', [
+            'post' => $post,
+        ]);
+    }
 }
