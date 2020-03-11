@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -16,5 +17,11 @@ class ProfileController extends Controller
         return view('profiles/index', [
             'user' => $user
         ]);
+    }
+
+    // this is another way of passing in user like we did above to the index public function
+    public function edit(User $user)
+    {
+        return view('profiles.edit', compact('user'));
     }
 }
