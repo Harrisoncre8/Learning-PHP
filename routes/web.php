@@ -28,3 +28,5 @@ Route::post('/p', 'PostsController@store');
 // calling the index method inside the home controller
 // profile route for user profiles
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+// adding edit route for user to edit only their profile
+Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
