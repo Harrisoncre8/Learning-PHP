@@ -31,5 +31,5 @@ Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 // adding edit route for user to edit their profile based on their id
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 // put/patch route to update user profile
-Route::patch('/profile/{user}/', 'ProfileController@edit')->name('profile.update');
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
