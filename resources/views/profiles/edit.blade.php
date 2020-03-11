@@ -15,11 +15,12 @@
                 <div class="form-group row">
                     <!-- Input for users to type in title for profile -->               
                     <label for="title" class="col-md-4 col-form-label">Title</label>
+                    <!-- Populate user profile title in input from DB -->
                     <input id="title" 
                         type="text" 
                         class="form-control @error('title') is-invalid @enderror" 
                         name="title"
-                        value="{{ old('title') }}" 
+                        value="{{ old('title') ?? $user->profile->title }}" 
                         required autocomplete="title" autofocus>
 
                     @error('title')
@@ -32,11 +33,12 @@
                 <div class="form-group row">
                     <!-- Input for users to type in Description for profile -->               
                     <label for="Description" class="col-md-4 col-form-label">Description</label>
+                    <!-- Populate user profile description in input from DB -->
                     <input id="Description" 
                         type="text" 
                         class="form-control @error('Description') is-invalid @enderror" 
                         name="Description"
-                        value="{{ old('Description') }}" 
+                        value="{{ old('Description') ?? $user->profile->description }}" 
                         required autocomplete="Description" autofocus>
 
                     @error('title')
@@ -49,11 +51,12 @@
                 <div class="form-group row">
                     <!-- Input for users to type in title for profile -->               
                     <label for="url" class="col-md-4 col-form-label">URL</label>
+                    <!-- Populate user profile URL in input from DB -->
                     <input id="url" 
                         type="text" 
                         class="form-control @error('url') is-invalid @enderror" 
                         name="url"
-                        value="{{ old('url') }}" 
+                        value="{{ old('url') ?? $user->profile->url }}" 
                         required autocomplete="url" autofocus>
 
                     @error('title')
