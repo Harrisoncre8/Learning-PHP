@@ -3,79 +3,82 @@
 @section('content')
 <div class="container">
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
-    @csrf
-    @method('PATCH')
+        @csrf
+        @method('PATCH')
+
         <div class="row">
             <div class="col-8 offset-2">
 
                 <div class="row">
-                    <h2>Edit Profile</h2>
+                    <h1>Edit Profile</h1>
                 </div>
-
                 <div class="form-group row">
                     <!-- Input for users to type in title for profile -->               
                     <label for="title" class="col-md-4 col-form-label">Title</label>
+                    
                     <!-- Populate user profile title in input from DB -->
-                    <input id="title" 
-                        type="text" 
-                        class="form-control @error('title') is-invalid @enderror" 
-                        name="title"
-                        value="{{ old('title') ?? $user->profile->title }}" 
-                        required autocomplete="title" autofocus>
+                    <input id="title"
+                           type="text"
+                           class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}"
+                           name="title"
+                           value="{{ old('title') ?? $user->profile->title }}"
+                           autocomplete="title" autofocus>
 
-                    @error('title')
+                    @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong>{{ $errors->first('title') }}</strong>
                         </span>
-                    @enderror
+                    @endif
                 </div>
 
                 <div class="form-group row">
                     <!-- Input for users to type in Description for profile -->               
-                    <label for="Description" class="col-md-4 col-form-label">Description</label>
+                    <label for="description" class="col-md-4 col-form-label">Description</label>
+                    
                     <!-- Populate user profile description in input from DB -->
-                    <input id="Description" 
-                        type="text" 
-                        class="form-control @error('Description') is-invalid @enderror" 
-                        name="Description"
-                        value="{{ old('Description') ?? $user->profile->description }}" 
-                        required autocomplete="Description" autofocus>
+                    <input id="description"
+                           type="text"
+                           class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                           name="description"
+                           value="{{ old('description') ?? $user->profile->description }}"
+                           autocomplete="description" autofocus>
 
-                    @error('title')
+                    @if ($errors->has('description'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong>{{ $errors->first('description') }}</strong>
                         </span>
-                    @enderror
+                    @endif
                 </div>
 
                 <div class="form-group row">
-                    <!-- Input for users to type in title for profile -->               
+                <!-- Input for users to type in title for profile -->               
                     <label for="url" class="col-md-4 col-form-label">URL</label>
+                    
                     <!-- Populate user profile URL in input from DB -->
-                    <input id="url" 
-                        type="text" 
-                        class="form-control @error('url') is-invalid @enderror" 
-                        name="url"
-                        value="{{ old('url') ?? $user->profile->url }}" 
-                        required autocomplete="url" autofocus>
+                    <input id="url"
+                           type="text"
+                           class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}"
+                           name="url"
+                           value="{{ old('url') ?? $user->profile->url }}"
+                           autocomplete="url" autofocus>
 
-                    @error('title')
+                    @if ($errors->has('url'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong>{{ $errors->first('url') }}</strong>
                         </span>
-                    @enderror
+                    @endif
                 </div>
-                
-                <!-- Input for users to upload image -->
+
                 <div class="row">
                     <label for="image" class="col-md-4 col-form-label">Profile Image</label>
+
                     <input type="file" class="form-control-file" id="image" name="image">
-                    @error('image')
-                            <strong>{{ $message }}</strong>
-                    @enderror
+
+                    @if ($errors->has('image'))
+                        <strong>{{ $errors->first('image') }}</strong>
+                    @endif
                 </div>
 
-                <!-- Button for users to upload image to profile -->
                 <div class="row pt-4">
                     <button class="btn btn-primary">Save Profile</button>
                 </div>
