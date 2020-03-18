@@ -24,4 +24,17 @@ class ProfileController extends Controller
     {
         return view('profiles.edit', compact('user'));
     }
+    
+    // form validation when updating profile changes
+    public function update()
+    {
+        $data = request()->validate([
+            'title' => '',
+            'description' => '',
+            'url' => '',
+            'image' => '',
+        ]);
+
+        dd($data);
+    }
 }
