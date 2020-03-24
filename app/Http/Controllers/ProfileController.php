@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -41,8 +42,24 @@ class ProfileController extends Controller
             'image' => '',
         ]);
         
-        // a layer of protection where only authenticated users can edit their own profile
-        auth()->user()->profile->update($data);
+        // if the request has an image, run the function
+        if (request('image')) {
+            // the image path is going to be request image profile and using the public driver
+            $imagePath = request('image')->store('profile', 'public');
+
+            // store with the 1000x1000 constraints
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+            //save the image
+            $image->save();
+        }
+
+         // a layer of protection where only authenticated users can edit their own profile
+         // array_merge() takes any number of arrays and appends them together
+         // here we have our data array and our image array merged
+         auth()->user()->profile->update(array_merge(
+             $data,
+             ['image' => $imagePath],
+         ));
 
         return redirect("/profile/{$user->id}");
     }
