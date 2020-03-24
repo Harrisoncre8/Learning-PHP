@@ -37,6 +37,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // when the user model is first booted up, this function is ran
+    // in other words, whenever a user is created, the created() event is executed
+    // and a profile is created for the user
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            $user->profile()->create([
+                'title' => $user->username,
+            ]);
+        });
+    }
+
     // posts is plural to help signify the 1 to many relationship
     public function posts()
     {
