@@ -10,7 +10,10 @@
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline"> 
                 <h1>{{ $user->username }}</h1> 
+                <!-- authorize add new post link only if the user can edit their profile -->
+                @can('update', $user->profile)
                 <a href="/p/create">Add New Post</a>
+                @endcan
             </div>
             
             <!-- authorize the edit profile link so only logged in user can see it -->
