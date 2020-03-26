@@ -51,6 +51,8 @@ class ProfileController extends Controller
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             //save the image
             $image->save();
+
+            $imageArray = ['image' => $imagePath];
         }
 
          // a layer of protection where only authenticated users can edit their own profile
@@ -58,7 +60,7 @@ class ProfileController extends Controller
          // here we have our data array and our image array merged
          auth()->user()->profile->update(array_merge(
              $data,
-             ['image' => $imagePath],
+             $imageArray ?? [],
          ));
 
         return redirect("/profile/{$user->id}");
