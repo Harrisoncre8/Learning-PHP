@@ -11,8 +11,9 @@
             <div class="d-flex justify-content-between align-items-baseline"> 
                 <div class="d-flex align-items-center pb-3">
                     <div class="h4">{{ $user->username }}</div> 
-
-                    <button class="btn btn-primary ml-4">Follow</button>
+                    
+                    <!-- this refers to our follow-button component -->
+                    <follow-button></follow-button>
                 </div>
 
                 <!-- authorize add new post link only if the user can edit their profile -->
