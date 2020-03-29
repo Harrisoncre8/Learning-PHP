@@ -12,7 +12,7 @@ class Profile extends Model
     // provide default image unless user uploads custom profile image
     public function profileImage()
     {
-        $imagePath = ($this->image) ? $this->image : '/storage/profile/NOQAzHUcsbR8RBsnHXMLewP0eQBqobCb5ueoDR6H.png';
+        $imagePath = ($this->image) ? $this->image : '/storage/profile/0epQFwTJ4D7dRbBpAXMiSw1i63pKMbT1g3u7iNgN.png';
         return '/storage/' . $imagePath;
     }
 
