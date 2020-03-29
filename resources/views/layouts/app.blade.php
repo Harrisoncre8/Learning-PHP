@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                <div> <img src="https://www.brandeps.com/icon-download/B/Book-icon-vector-04.svg" 
+                <div> <img src="http://localhost:8000/storage/uploads/0MyJR2mS9cFiVjVuOtPxVUJDrzs2hZJQDvjrCdt5.png" 
                         style="height: 30px; border-right: 1px solid #333" class="pr-3" /> </div>
                 <div class="pl-3" style="padding-top: 2px">Learning PHP</div>
                 </a>
