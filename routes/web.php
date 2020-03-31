@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// post route for the follow user button
+Route::post('follow/{user}', 'FollowsController@store');
+
 // route for individual image posts
 // /p/create will go to the PostsController 
 // and run our @create method
