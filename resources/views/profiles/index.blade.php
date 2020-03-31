@@ -12,8 +12,8 @@
                 <div class="d-flex align-items-center pb-3">
                     <div class="h4">{{ $user->username }}</div> 
                     
-                    <!-- this refers to our follow-button component -->
-                    <follow-button></follow-button>
+                    <!-- this refers to our follow-button component and passes the user id props -->
+                    <follow-button user-id="{{ $user->id }}"></follow-button>
                 </div>
 
                 <!-- authorize add new post link only if the user can edit their profile -->
