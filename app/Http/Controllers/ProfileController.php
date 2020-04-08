@@ -8,16 +8,14 @@ use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
-    public function index($user)
+    public function index(User $user)
     {
-        // if user is not found, 404
-        $user = \App\User::findOrFail($user);
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        // home is referring to the home.blade.php file
-        // we've renamed home to index.blade.php and moved it to profiles
-        return view('profiles/index', [
-            'user' => $user
-        ]);
+        // // if user is not found, 404
+        // $user = User::findOrFail($user);
+
+        return view('profiles.index', compact('user', 'follows'));
     }
 
     // this is another way of passing in user like we did above to the index public function
