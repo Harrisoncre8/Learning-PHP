@@ -16,6 +16,12 @@ class Profile extends Model
         return '/storage/' . $imagePath;
     }
 
+    // our profile class will have many followers that are users
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(user::class);
