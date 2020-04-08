@@ -1904,29 +1904,9 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FollowButton.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['userId'],
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
-  methods: {
-    followUser: function followUser() {
-      axios.post('/follow/' + this.userId).then(function (response) {
-        alert(response.data);
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/harrisonnguyen/Personal_Projects/ProjectPHP/resources/js/components/FollowButton.vue: Unexpected token, expected \",\" (21:4)\n\n\u001b[0m \u001b[90m 19 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 | \u001b[39m    methods\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m        followUser() {\u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m            axios\u001b[33m.\u001b[39mpost(\u001b[32m'/follow/'\u001b[39m \u001b[33m+\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39muserId)\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m                \u001b[33m.\u001b[39mthen(response \u001b[33m=>\u001b[39m {\u001b[0m\n    at Parser.raise (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:7044:17)\n    at Parser.unexpected (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:8422:16)\n    at Parser.expect (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:8408:28)\n    at Parser.parseObj (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:10010:14)\n    at Parser.parseExprAtom (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9644:28)\n    at Parser.parseExprSubscripts (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9287:23)\n    at Parser.parseMaybeUnary (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9267:21)\n    at Parser.parseExprOps (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9137:23)\n    at Parser.parseMaybeConditional (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9110:23)\n    at Parser.parseMaybeAssign (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:9065:21)\n    at Parser.parseExportDefaultExpression (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:11906:24)\n    at Parser.parseExport (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:11808:31)\n    at Parser.parseStatementContent (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:10828:27)\n    at Parser.parseStatement (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:10724:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:11298:25)\n    at Parser.parseBlockBody (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:11285:10)\n    at Parser.parseTopLevel (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:10655:10)\n    at Parser.parse (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:12264:10)\n    at parse (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/parser/lib/index.js:12315:38)\n    at parser (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/gensync/index.js:254:32)\n    at /Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/gensync/index.js:266:13\n    at async.call.result.err.err (/Users/harrisonnguyen/Personal_Projects/ProjectPHP/node_modules/gensync/index.js:216:11)");
 
 /***/ }),
 
@@ -37301,11 +37281,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "button",
-      { staticClass: "btn btn-primary ml-4", on: { click: _vm.followUser } },
-      [_vm._v("Follow")]
-    )
+    _c("button", {
+      staticClass: "btn btn-primary ml-4",
+      domProps: { textContent: _vm._s(_vm.buttonText) },
+      on: { click: _vm.followUser }
+    })
   ])
 }
 var staticRenderFns = []
